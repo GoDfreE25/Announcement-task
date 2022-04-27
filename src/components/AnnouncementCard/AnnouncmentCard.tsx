@@ -8,7 +8,6 @@ export const AnnouncementCard: React.FC<Props> = ({
 }) => (
   <div className="card">
     <div className="card-content">
-      <h4>{id}</h4>
       <div className="media">
         <div className="media-content">
           <p className="title is-8">{title}</p>
