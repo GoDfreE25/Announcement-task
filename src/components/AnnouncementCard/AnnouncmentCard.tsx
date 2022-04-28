@@ -1,11 +1,16 @@
 import React from "react";
 import { Announcement } from "../../types/announcement";
 
-type Props = Announcement;
+interface Props {
+  announcements: Announcement;
+  removeAnnoun: (announcementId: string) => void;
+}
 
 export const AnnouncementCard: React.FC<Props> = ({
-  title, description, id, date,
-}) => (
+  announcements, removeAnnoun
+}) => {
+  const { title, description, date, id } = announcements
+return (
   <div className="card">
     <div className="card-content">
       <div className="media">
@@ -20,7 +25,11 @@ export const AnnouncementCard: React.FC<Props> = ({
         <div className="content_date">
           {date}
         </div>
+        <button type="button" className="button_delete" onClick={() => removeAnnoun(id)}>
+          Delete
+        </button>
       </div>
     </div>
   </div>
-);
+  );
+}

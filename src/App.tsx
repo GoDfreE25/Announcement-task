@@ -15,10 +15,17 @@ export const App: React.FC = React.memo(() => {
     ]);
   };
 
+  const deleteAnnouncement = (announcementId: string) => {
+    setAnnouncements(announcements.filter(announcement => announcement.id !== announcementId));
+      };
+
   return (
     <div className="page">
      <div className="page-content">
-        <AnnouncementsList announcement={announcements} />
+        <AnnouncementsList 
+          announcements={announcements}
+          removeAnnoun={deleteAnnouncement}
+        />
       </div>
       <div className="sidebar">
         <NewAnnouncement onAdd={addAnnouncement} />

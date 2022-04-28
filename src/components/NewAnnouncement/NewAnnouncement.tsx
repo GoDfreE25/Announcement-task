@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Announcement } from "../../types/announcement";
+import { v4 as uuidv4 } from 'uuid';
 
 interface Props {
   onAdd: (announcement: Announcement) => void;
@@ -12,12 +13,12 @@ export const NewAnnouncement: React.FC<Props> = React.memo(({
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
 
-  const createMovie = () => {
+  const createAnnouncement = () => {
     onAdd({
     title,
     description,
     date,
-    id: 0,
+    id: uuidv4(),
 });
   };
 
@@ -27,9 +28,15 @@ export const NewAnnouncement: React.FC<Props> = React.memo(({
     setDate('');
   };
 
+  const handelDateUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const dateValue = event.target.value;
+    const changedValue = dateValue.split('-').reverse().join('.');
+    setDate(changedValue);
+  }
+
   const handlerChange = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    createMovie();
+    createAnnouncement();
     resetForm();
   };
 
@@ -67,11 +74,11 @@ export const NewAnnouncement: React.FC<Props> = React.memo(({
           id="imgUrl"
           placeholder="Write the imgUrl"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={(e) => handelDateUpdate(e)}
           className="form_text"
         />
         <button className="button_add" type="submit">
-          Add the Form
+          Add the Announcement
         </button>
       </form>
     </div>
