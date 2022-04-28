@@ -9,7 +9,7 @@ interface Props {
 export const AnnouncementCard: React.FC<Props> = ({
   announcements, removeAnnoun
 }) => {
-  const { title, description, date, id } = announcements
+  const { title, date, id } = announcements
 return (
   <div className="card">
     <div className="card-content">
@@ -19,12 +19,10 @@ return (
         </div>
       </div>
       <div className="content">
-        {description}
-        <br />
-        <br />
         <div className="content_date">
           {date}
         </div>
+        <br />
         <button type="button" className="button_delete" onClick={() => removeAnnoun(id)}>
           Delete
         </button>
