@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Announcement-task/static/css/main.6e6ffaea.css",
+    "main.js": "/Announcement-task/static/js/main.a7ad7a5f.js",
+    "index.html": "/Announcement-task/index.html",
+    "main.6e6ffaea.css.map": "/Announcement-task/static/css/main.6e6ffaea.css.map",
+    "main.a7ad7a5f.js.map": "/Announcement-task/static/js/main.a7ad7a5f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e6ffaea.css",
+    "static/js/main.a7ad7a5f.js"
+  ]
+}
