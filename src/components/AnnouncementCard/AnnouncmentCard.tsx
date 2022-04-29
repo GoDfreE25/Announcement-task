@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Announcement } from "../../types/announcement";
 import { Modal } from "../Modal/editWindow";
+import '../AnnouncementCard/AnnouncementCard.scss'
 
 interface Props {
   announcements: Announcement;
@@ -14,23 +15,29 @@ export const AnnouncementCard: React.FC<Props> = ({
   const { title, id } = announcements
   const [openModal, setOpenModal] = useState(false);
   const [tittle, setTittle] = useState(title);
+
 return (
   <div className="card">
-    <div className="card-content">
-      <div className="media">
-        <div className="media-content">
-          <p className="title is-8">{tittle}</p>
+    <div className="card__content">
+      <div>
+        <div className="card__media-content">
+          <p className="card__title">{tittle}</p>
         </div>
       </div>
       <div className="content">
-        <button type="button" className="button_delete" onClick={() => removeAnnoun(id)}>
+        <button 
+          type="button" 
+          className="card__button" 
+          onClick={() => removeAnnoun(id)}
+        >
           Delete
         </button>
         <button 
-          type='button' 
+          type='button'
+          className="card__button"
           onClick={() => setOpenModal(true)}
         >
-          Open Modal
+          Edit title
         </button>
         {openModal && 
         <Modal 
@@ -39,7 +46,11 @@ return (
           title={tittle}
         />}
       </div>
-      <button type='button' onClick={() => setSelectedId(id)}>
+      <button 
+        type='button'
+        className="card__button"
+        onClick={() => setSelectedId(id)}
+      >
         Show Announcement Details
       </button>
     </div>

@@ -29,13 +29,12 @@ export const CurrentAnnouncement: React.FC<Props> = ({ selectedId, setClearId, a
       <h3 className="CurrentAnnouncement__title">{announcement?.title}</h3>
       <p className="CurrentAnnouncement__description">{announcement?.description}</p>
       <p className="CurrentAnnouncement__date">{announcement?.dateAdded}</p>
-
-      <button
+        <button
         type="button"
-        className="List__announcement-button button"
+        className="CurrentAnnouncement__clear CurrentAnnouncement__button"
         onClick={() => setClearId('0')}
       >
-        Clear
+        Close Details
       </button>
     </div>
   );

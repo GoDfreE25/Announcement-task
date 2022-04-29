@@ -37,35 +37,45 @@ export const App: React.FC = React.memo(() => {
     
 
   return (
-    <div className="page">
-       <div className="control">
-          <input
-            type="text"
-            value={query}
-            onChange={handleChange}
-            id="search-query"
-            className="input"
-            placeholder="Write the search word"
+  <div className="App">
+    <header className="App__header">
+      <input
+        type="search"
+        value={query}
+        onChange={handleChange}
+        id="search-query"
+        className="App__input"
+        placeholder="Write the search word"
+      />
+    </header>
+    <main className='App__main'>
+      <div className="App__content">
+          <AnnouncementsList 
+            announcements={searchedAnnouncement}
+            removeAnnoun={deleteAnnouncement}
+            setSelectedId={setSelectedAnnouncemenId}
           />
         </div>
-        <br />
-        <CurrentAnnouncement
+        <div className="App__sidebar">
+          <CurrentAnnouncement
           selectedId={selectedAnnouncementId} 
           setClearId={setSelectedAnnouncemenId} 
           announcements={searchedAnnouncement} 
-        />
-     <div className="page-content">
-        <AnnouncementsList 
-          announcements={searchedAnnouncement}
-          removeAnnoun={deleteAnnouncement}
-          setSelectedId={setSelectedAnnouncemenId}
-        />
-      </div>
-      <div className="sidebar">
-        <button type='button' onClick={() => setShowAdd(!showAdd)}>Show Panel To Add Announcement</button>
-        {showAdd && <NewAnnouncement onAdd={addAnnouncement} />}
-      </div>
-    </div>
+          />
+          <div className="App__panel">
+          <button 
+            type='button'
+            className='App__button App__button-show'
+            onClick={() => setShowAdd(!showAdd)}
+          >
+            Show Panel To Add Announcement
+          </button>
+          {showAdd && <NewAnnouncement onAdd={addAnnouncement} />}
+          </div>
+        </div>
+        
+    </main>
+  </div>
   );
 }) 
 

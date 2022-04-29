@@ -1,6 +1,7 @@
 import React from "react";
 import { Announcement } from "../../types/announcement";
 import {AnnouncementCard} from "../AnnouncementCard/AnnouncmentCard";
+import '../AnnouncementList/AnnouncementList.scss';
 
 interface Props {
   announcements: Announcement[];

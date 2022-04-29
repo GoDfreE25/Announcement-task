@@ -62,7 +62,7 @@ export const NewAnnouncement: React.FC<Props> = React.memo(({
           placeholder="Write the title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="NewAnnouncementForm_input"
+          className="NewAnnouncementForm__input"
         />
         <input
           type="text"
@@ -71,7 +71,7 @@ export const NewAnnouncement: React.FC<Props> = React.memo(({
           placeholder="Write the title"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="NewAnnouncementForm_input"
+          className="NewAnnouncementForm__input"
         />
         <textarea
           name="description"
@@ -79,7 +79,7 @@ export const NewAnnouncement: React.FC<Props> = React.memo(({
           placeholder="Write the description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="NewAnnouncementForm_input"
+          className="NewAnnouncementForm__input"
         />
         <input
           type="date"
@@ -89,7 +89,7 @@ export const NewAnnouncement: React.FC<Props> = React.memo(({
           onChange={(e) => handelDateUpdate(e)}
           className="NewAnnouncementForm_input"
         />
-        <button className="NewAnnouncementForm_submit-button" type="submit">
+        <button className="NewAnnouncementForm__submit-button" type="submit">
           Add the Announcement
         </button>
       </form>

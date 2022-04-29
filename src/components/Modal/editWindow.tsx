@@ -1,3 +1,4 @@
+import '../Modal/editWindow.scss'
 
 interface Props {
   closeModal: (name: boolean) => void;
@@ -9,8 +10,7 @@ export const Modal: React.FC<Props> = ({ closeModal, setTitle, title }) => {
 
   return (
     <div className="modal">
-      <div className="modal_container">
-        <button type="button" onClick={() => closeModal(false)}>X</button>
+      <div className="modal__container">
         <form
         method="post"
         action="#"
@@ -23,10 +23,16 @@ export const Modal: React.FC<Props> = ({ closeModal, setTitle, title }) => {
           defaultValue={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Write the title"
-          className="form_text"
+          className="modal__input"
         />
         <div className="footer">
-          <button type="button" onClick={() => closeModal(false)}>Ok</button>
+          <button 
+            type="button" 
+            className='modal__button' 
+            onClick={() => closeModal(false)}
+          >
+            Save
+          </button>
         </div>
         </form>
       </div>
