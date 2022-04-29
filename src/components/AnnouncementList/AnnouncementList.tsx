@@ -12,7 +12,11 @@ export const AnnouncementsList: React.FC<Props> = ({ announcements, removeAnnoun
   <div className="announcement">
     {announcements.map(announcement => (
       <div className="announcement_list">
-        <AnnouncementCard key={announcement.id} announcements={announcement} removeAnnoun={removeAnnoun}/>
+        <AnnouncementCard 
+          key={announcement.id} 
+          announcements={announcement} 
+          removeAnnoun={removeAnnoun} 
+        />
       </div>
     ))}
   </div>

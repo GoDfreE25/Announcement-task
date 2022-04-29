@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Announcement } from "../../types/announcement";
+import { Modal } from "../Modal/modalWindow";
 
 interface Props {
   announcements: Announcement;
@@ -9,7 +10,9 @@ interface Props {
 export const AnnouncementCard: React.FC<Props> = ({
   announcements, removeAnnoun
 }) => {
-  const { title, date, id } = announcements
+  const { title, id } = announcements
+  const [openModal, setOpenModal] = useState(false);
+
 return (
   <div className="card">
     <div className="card-content">
@@ -19,13 +22,16 @@ return (
         </div>
       </div>
       <div className="content">
-        <div className="content_date">
-          {date}
-        </div>
-        <br />
         <button type="button" className="button_delete" onClick={() => removeAnnoun(id)}>
           Delete
         </button>
+        <button 
+          type='button' 
+          onClick={() => setOpenModal(true)}
+        >
+          Open Modal
+        </button>
+        {openModal && <Modal closeModal={setOpenModal} titl={title} />}
       </div>
     </div>
   </div>

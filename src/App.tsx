@@ -8,6 +8,7 @@ import { Announcement } from './types/announcement';
 
 export const App: React.FC = React.memo(() => {
   const [announcements, setAnnouncements] = useState(announcementFromServer);
+  const [showAdd, setShowAdd] = useState(false);
   const [query, setQuery] = useState('');
 
       const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,15 +37,16 @@ export const App: React.FC = React.memo(() => {
   return (
     <div className="page">
        <div className="control">
-              <input
-                type="text"
-                value={query}
-                onChange={handleChange}
-                id="search-query"
-                className="input"
-                placeholder="Write the search word"
-              />
-            </div>
+          <input
+            type="text"
+            value={query}
+            onChange={handleChange}
+            id="search-query"
+            className="input"
+            placeholder="Write the search word"
+          />
+        </div>
+        <br />
      <div className="page-content">
         <AnnouncementsList 
           announcements={searchedAnnouncement}
@@ -52,7 +54,8 @@ export const App: React.FC = React.memo(() => {
         />
       </div>
       <div className="sidebar">
-        <NewAnnouncement onAdd={addAnnouncement} />
+        <button type='button' onClick={() => setShowAdd(!showAdd)}>Show Panel To Add Announcement</button>
+        {showAdd && <NewAnnouncement onAdd={addAnnouncement} />}
       </div>
     </div>
   );
