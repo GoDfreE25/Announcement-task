@@ -5,10 +5,11 @@ import { Modal } from "../Modal/modalWindow";
 interface Props {
   announcements: Announcement;
   removeAnnoun: (announcementId: string) => void;
+  setSelectedId: (userId: string) => void;
 }
 
 export const AnnouncementCard: React.FC<Props> = ({
-  announcements, removeAnnoun
+  announcements, removeAnnoun, setSelectedId
 }) => {
   const { title, id } = announcements
   const [openModal, setOpenModal] = useState(false);
@@ -33,6 +34,9 @@ return (
         </button>
         {openModal && <Modal closeModal={setOpenModal} titl={title} />}
       </div>
+      <button type='button' onClick={() => setSelectedId(id)}>
+        Show Announcement Details
+      </button>
     </div>
   </div>
   );

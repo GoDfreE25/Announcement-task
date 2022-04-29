@@ -3,12 +3,14 @@ import React, { useMemo, useState } from 'react';
 import announcementFromServer from './api/announcement.json'
 import './App.css';
 import { AnnouncementsList } from './components/AnnouncementList/AnnouncementList';
+import { CurrentAnnouncement } from './components/CurrentAnnouncement/currentAnnouncement';
 import { NewAnnouncement } from './components/NewAnnouncement/NewAnnouncement';
 import { Announcement } from './types/announcement';
 
 export const App: React.FC = React.memo(() => {
   const [announcements, setAnnouncements] = useState(announcementFromServer);
   const [showAdd, setShowAdd] = useState(false);
+  const [selectedAnnouncementId, setSelectedAnnouncemenId] = useState('0');
   const [query, setQuery] = useState('');
 
       const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,10 +49,16 @@ export const App: React.FC = React.memo(() => {
           />
         </div>
         <br />
+        <CurrentAnnouncement
+          selectedId={selectedAnnouncementId} 
+          setClearId={setSelectedAnnouncemenId} 
+          announcements={searchedAnnouncement} 
+        />
      <div className="page-content">
         <AnnouncementsList 
           announcements={searchedAnnouncement}
           removeAnnoun={deleteAnnouncement}
+          setSelectedId={setSelectedAnnouncemenId}
         />
       </div>
       <div className="sidebar">

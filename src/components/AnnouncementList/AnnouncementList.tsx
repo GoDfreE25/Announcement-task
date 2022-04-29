@@ -5,9 +5,10 @@ import {AnnouncementCard} from "../AnnouncementCard/AnnouncmentCard";
 interface Props {
   announcements: Announcement[];
   removeAnnoun: (announcementId: string) => void;
+  setSelectedId: (userId: string) => void;
 }
 
-export const AnnouncementsList: React.FC<Props> = ({ announcements, removeAnnoun }) => {
+export const AnnouncementsList: React.FC<Props> = ({ announcements, removeAnnoun, setSelectedId }) => {
   return (
   <div className="announcement">
     {announcements.map(announcement => (
@@ -16,6 +17,7 @@ export const AnnouncementsList: React.FC<Props> = ({ announcements, removeAnnoun
           key={announcement.id} 
           announcements={announcement} 
           removeAnnoun={removeAnnoun} 
+          setSelectedId={setSelectedId}
         />
       </div>
     ))}
