@@ -1,38 +1,44 @@
 [
   {
     "id": "1",
+    "name": "Roman",
     "title": "Psychologists: mental health labels can do more harm than good",
     "description": "University researchers say diagnosing patients with medical labels such as personality disorder can lead to less effective treatments.",
-    "date": "27.04.2022"
+    "dateAdded": "21.04.2022"
   },
   {
     "id": "2",
+    "name": "Petro",
     "title": "Programer: repair yuor computer and instal program",
     "description": "University researchers say diagnosing patients with medical labels such as personality disorder can lead to less effective treatments.",
-    "date": "27.04.2022"
+    "dateAdded": "27.04.2022"
   },
   {
     "id": "3",
+    "name": "Taras",
     "title": "Psychologists: mental health labels can do more harm than good",
     "description": "University researchers say diagnosing patients with medical labels such as personality disorder can lead to less effective treatments.",
-    "date": "27.04.2022"
+    "dateAdded": "28.04.2022"
   },
   {
     "id": "4",
+    "name": "Anton",
     "title": "Psychologists: mental health labels can do more harm than good",
     "description": "University researchers say diagnosing patients with medical labels such as personality disorder can lead to less effective treatments.",
-    "date": "27.04.2022"
+    "dateAdded": "29.04.2022"
   },
   {
     "id": "5",
+    "name": "Vlad",
     "title": "Psychologists: mental health labels can do more harm than good",
     "description": "University researchers say diagnosing patients with medical labels such as personality disorder can lead to less effective treatments.",
-    "date": "27.04.2022"
+    "dateAdded": "23.04.2022"
   },
   {
     "id": "6",
+    "name": "Ihor",
     "title": "Psychologists: mental health labels can do more harm than good",
     "description": "University researchers say diagnosing patients with medical labels such as personality disorder can lead to less effective treatments.",
-    "date": "27.04.2022"
+    "dateAdded": "25.04.2022"
   }
 ]

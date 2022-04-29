@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useMemo, useState } from 'react';
 import announcementFromServer from './api/announcement.json'
-import './App.css';
+import './App.scss';
 import { AnnouncementsList } from './components/AnnouncementList/AnnouncementList';
 import { CurrentAnnouncement } from './components/CurrentAnnouncement/currentAnnouncement';
 import { NewAnnouncement } from './components/NewAnnouncement/NewAnnouncement';

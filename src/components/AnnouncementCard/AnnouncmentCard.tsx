@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Announcement } from "../../types/announcement";
-import { Modal } from "../Modal/modalWindow";
+import { Modal } from "../Modal/editWindow";
 
 interface Props {
   announcements: Announcement;
@@ -13,13 +13,13 @@ export const AnnouncementCard: React.FC<Props> = ({
 }) => {
   const { title, id } = announcements
   const [openModal, setOpenModal] = useState(false);
-
+  const [tittle, setTittle] = useState(title);
 return (
   <div className="card">
     <div className="card-content">
       <div className="media">
         <div className="media-content">
-          <p className="title is-8">{title}</p>
+          <p className="title is-8">{tittle}</p>
         </div>
       </div>
       <div className="content">
@@ -32,7 +32,12 @@ return (
         >
           Open Modal
         </button>
-        {openModal && <Modal closeModal={setOpenModal} titl={title} />}
+        {openModal && 
+        <Modal 
+          closeModal={setOpenModal} 
+          setTitle={setTittle}
+          title={tittle}
+        />}
       </div>
       <button type='button' onClick={() => setSelectedId(id)}>
         Show Announcement Details
