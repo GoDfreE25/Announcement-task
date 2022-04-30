@@ -17,23 +17,23 @@ export const App: React.FC = React.memo(() => {
         setQuery(event.target.value);
       };
 
-      const announcmente = (announc: Announcement[]) => (
-        announc.filter(announcement => {
-          return announcement.title.toLocaleLowerCase().includes(query.toLocaleLowerCase());
-        }));
+    const announcmente = (announc: Announcement[]) => (
+      announc.filter(announcement => {
+        return announcement.title.toLocaleLowerCase().includes(query.toLocaleLowerCase());
+      }));
 
-      const searchedAnnouncement = useMemo(() => announcmente(announcements), [query, announcements]);
+    const searchedAnnouncement = useMemo(() => announcmente(announcements), [query, announcements]);
 
-      const addAnnouncement = (announcement: Announcement) => {
-        setAnnouncements(currentAnnouncement => [
-          ...currentAnnouncement,
-          announcement
-        ]);
-      };
-    
-      const deleteAnnouncement = (announcementId: string) => {
-        setAnnouncements(announcements.filter(announcement => announcement.id !== announcementId));
-          };
+    const addAnnouncement = (announcement: Announcement) => {
+      setAnnouncements(currentAnnouncement => [
+        ...currentAnnouncement,
+        announcement
+      ]);
+    };
+  
+    const deleteAnnouncement = (announcementId: string) => {
+      setAnnouncements(announcements.filter(announcement => announcement.id !== announcementId));
+        };
     
 
   return (
